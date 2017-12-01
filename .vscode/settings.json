@@ -1,5 +1,4 @@
 {
-	//"C_Cpp.clang_format_path": "C:/Program Files/LLVM/bin/clang-format.exe",
 	"C_Cpp.clang_format_style": "Visual Studio",
 	"C_Cpp.clang_format_formatOnSave": false,
 	"[cpp]": {
@@ -32,13 +31,11 @@
 		"**/.svn": true,
 		"**/.hg": true,
 		"**/*.old": true,
-		"**/*.rst": true,
 		"**/build": true,
-		"**/UnitTest Wifi + RFID": true,
 		"**/CVS": true,
 		"**/.DS_Store": true
 	  },
-	  "perforce.editOnFileModified": true,
+	"perforce.editOnFileModified": true,
 	"perforce.addOnFileCreate": true,
 	"perforce.editOnFileSave": true,
 	"perforce.annotate.enable": true,

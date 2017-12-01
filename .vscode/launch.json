@@ -1,0 +1,22 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "OpenOCD Debug",
+			"type": "gdb",
+			"request": "attach",
+			"printCalls": true,
+			"executable": "${workspaceRoot}/build/app-template.elf",
+			"target": ":3333",
+			"remote": true,
+			"cwd": "${workspaceRoot}",
+			"autorun": [
+				"mon reset halt",
+				"thb app_main",
+				"x $a1=0"
+			],
+			"gdbpath": "c:/msys2/opt/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb.exe"
+		}
+
+
+//https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md

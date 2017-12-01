@@ -1,0 +1,132 @@
+{
+	"version": "2.0.0",
+
+    "options": {
+        "cwd": "${workspaceRoot}",
+        "env": {
+            "IDF_PATH" : "C:/msys2/home/svcgu/esp/esp-idf/" ,
+			"PATH" : "C:/msys2/usr/bin/;C:/msys2/opt/xtensa-esp32-elf/bin;C:/msys2/usr/;C:/msys2/mingw32/bin;C:/msys2/home/svcgu/esp/openocd-esp32/bin;C:/msys2/home/svcguy/esp/openocd-esp32",
+			"PWD" : "${workspaceRoot}",
+			"projectname": "testApp"
+        }
+	},
+	"tasks": [
+		{
+			"label": "build app",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"app",
+				"-j8"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": "absolute",
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"label": "clean",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"app-clean",
+				"-j8"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "monitor",
+			"type": "shell",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"command": "make",
+			"args": [
+				"monitor",
+				"-j8"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "flash",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"command": "make",
+			"args": [
+				"flash",
+				"-j8"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "menuconfig",
+			"type": "process",
+			"command": "make",
+			"args": [
+				"menuconfig"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "openocd",
+			"type": "shell",
+			"command": "openocd",
+			"args": [
+				"-s",
+				"C:/msys2/home/svcgu/esp/openocd-esp32/share/openocd/scripts",
+				"-f",
+				"interface/ftdi/esp32_devkitj_v1.cfg",
+				"-f",
+				"board/esp-wroom-32.cfg"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		}
+	]
+}

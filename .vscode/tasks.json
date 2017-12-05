@@ -4,10 +4,17 @@
     "options": {
         "cwd": "${workspaceRoot}",
         "env": {
-            "IDF_PATH" : "C:/msys2/home/svcgu/esp/esp-idf/" ,
-			"PATH" : "C:/msys2/usr/bin/;C:/msys2/opt/xtensa-esp32-elf/bin;C:/msys2/usr/;C:/msys2/mingw32/bin;C:/msys2/home/svcgu/esp/openocd-esp32/bin;C:/msys2/home/svcguy/esp/openocd-esp32",
-			"PWD" : "${workspaceRoot}",
-			"projectname": "testApp"
+			// Change the following enviornment variables according to your installation
+			"idfPATH": "C:/msys2/home/svcgu/esp/esp-idf/",						/* Path of esp-idf */
+			"openocdPATH": "C:/msys2/home/svcgu/esp/openocd-esp32/bin",			/* Path of openOCD binaries */
+			"openocdesp32PATH": "C:/msys2/home/svcgu/esp/openocd-esp32/",		/* openOCD-esp32 root path */
+			"gdbPATH": "C:/msys2/opt/xtensa-esp32-elf/bin",						/* Path of esp32 GDB */
+			"msysROOT": "C:/msys2",												/* MSYS root directory */
+			"appName": "app-template",											/* filename of *.elf file */
+			// The following enviornment variables are based on the above and do not need to be changed
+            "IDF_PATH" : "${idfPATH}",
+			"PATH" : "${msysROOT}/usr/bin/;${msysROOT}/opt/xtensa-esp32-elf/bin;${msysROOT}/usr/;${msysROOT}/mingw32/bin;${openocdPATH}",
+			"PWD" : "${workspaceRoot}"
         }
 	},
 	"tasks": [
@@ -114,7 +121,7 @@
 			"command": "openocd",
 			"args": [
 				"-s",
-				"C:/msys2/home/svcgu/esp/openocd-esp32/share/openocd/scripts",
+				"${openocdesp32PATH}++/share/openocd/scripts",
 				"-f",
 				"interface/ftdi/esp32_devkitj_v1.cfg",
 				"-f",

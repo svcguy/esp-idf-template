@@ -6,7 +6,7 @@
 			"type": "gdb",
 			"request": "attach",
 			"printCalls": true,
-			"executable": "${workspaceRoot}/build/app-template.elf",
+			"executable": "${workspaceRoot}/build/${appName}.elf",
 			"target": ":3333",
 			"remote": true,
 			"cwd": "${workspaceRoot}",
@@ -15,7 +15,7 @@
 				"thb app_main",
 				"x $a1=0"
 			],
-			"gdbpath": "c:/msys2/opt/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb.exe"
+			"gdbpath": "${gdbpath}/xtensa-esp32-elf-gdb.exe"
 		}
 
 

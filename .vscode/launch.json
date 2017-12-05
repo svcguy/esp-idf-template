@@ -15,7 +15,7 @@
 				"thb app_main",
 				"x $a1=0"
 			],
-			"gdbpath": "${gdbpath}/xtensa-esp32-elf-gdb.exe"
+			"gdbpath": "C:/msys2/opt/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb.exe"
 		}
 
 

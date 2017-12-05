@@ -4,11 +4,11 @@
     "options": {
         "cwd": "${workspaceRoot}",
         "env": {
-			"appName": "app-template",		/* filename of *.elf file */
+			// IDF_PATH must be the path of the esp-idf
 			"IDF_PATH" : "C:/msys2/home/svcgu/esp/esp-idf",
 			// PATH must contain the paths to the following executables:
 			// make.exe, xtensa-esp32-elf-xxx.exe, python.exe, openocd.exe
-			"PATH" : "C:/msys2/usr/bin;C:/msys2/opt/xtensa-esp32-elf/bin;C:/msys2/usr;C:/msys2/mingw32/bin;C:/msys2/home/svcgu/home/esp/openocd-esp32/bin",
+			"PATH" : "C:/msys2/usr/bin;C:/msys2/opt/xtensa-esp32-elf/bin;C:/msys2/usr;C:/msys2/mingw32/bin;C:/msys2/home/svcgu/esp/openocd-esp32/bin",
 			"PWD" : "${workspaceRoot}"
         }
 	},

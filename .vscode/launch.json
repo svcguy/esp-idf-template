@@ -6,7 +6,7 @@
 			"type": "gdb",
 			"request": "attach",
 			"printCalls": true,
-			"executable": "${workspaceRoot}/build/${appName}.elf",
+			"executable": "${workspaceRoot}/build/app-template.elf",
 			"target": ":3333",
 			"remote": true,
 			"cwd": "${workspaceRoot}",
